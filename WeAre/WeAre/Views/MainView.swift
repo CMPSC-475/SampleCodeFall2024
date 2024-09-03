@@ -13,9 +13,9 @@ struct MainView: View {
         ZStack {
             Color.cyan
             VStack{
-                MascotView()
-                CheerTextView(cheerText: "We Are", isVisible: cheerManager.isFirstCheerVisible)
-                CheerTextView(cheerText: "Penn State", isVisible: cheerManager.isSecondCheerVisible)
+                MascotView(imageName: cheerManager.currentCheer.imageName)
+                CheerTextView(cheerText: cheerManager.currentCheer.title, isVisible: cheerManager.isFirstCheerVisible)
+                CheerTextView(cheerText: cheerManager.currentCheer.title, isVisible: cheerManager.isSecondCheerVisible)
                 CheerButtonView(action: cheerManager.cheer)
             }
         }
