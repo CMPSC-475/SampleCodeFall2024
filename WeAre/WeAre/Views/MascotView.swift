@@ -21,4 +21,5 @@ struct MascotView: View {
 
 #Preview {
     MascotView()
+        .environment(CheerManager())
 }

@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var cheerManager = CheerManager()
+    @Environment(CheerManager.self) var manager
     var body: some View {
         ZStack {
             Color.cyan
             VStack{
-                MascotView(imageName: cheerManager.currentCheer.imageName)
-                CheerTextView(cheerText: cheerManager.currentCheer.title, isVisible: cheerManager.isFirstCheerVisible)
-                CheerTextView(cheerText: cheerManager.currentCheer.title, isVisible: cheerManager.isSecondCheerVisible)
-                CheerButtonView(action: cheerManager.cheer)
+                MascotView(imageName: manager.currentCheer.imageName)
+                CheerTextView(cheerText: manager.currentCheer.title, isVisible: manager.isFirstCheerVisible)
+                CheerTextView(cheerText: manager.currentCheer.title, isVisible: manager.isSecondCheerVisible)
+                CheerButtonView(action: manager.cheer)
             }
         }
         .ignoresSafeArea()
@@ -27,4 +27,5 @@ struct MainView: View {
 
 #Preview {
     MainView()
+        .environment(CheerManager())
 }
