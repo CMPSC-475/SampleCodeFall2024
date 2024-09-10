@@ -24,8 +24,9 @@ struct OffsetAndPositionExampleView: View {
                 Circle()
                     .fill(Color.blue)
                     .frame(width: 50, height: 50)
-                    
                     .offset(x: xValue, y: yValue) // Moves the circle by (50, 50) relative to its original position
+                    .border(Color.black)
+                    
                 Text("This circle is offset")
                     .foregroundColor(.white)
             }
@@ -40,11 +41,15 @@ struct OffsetAndPositionExampleView: View {
                 Circle()
                     .fill(Color.red)
                     .frame(width: 50, height: 50)
+                    .border(Color.black)
                     .position(x: xValue, y: yValue) // Moves the circle to (50, 50) in the parent coordinate system
+                    
+                    
                     
                 Text("This circle is positioned")
                     .foregroundColor(.white)
             }
+            .border(.black)
             
             Text("GeometryReader Example")
                             .font(.title)

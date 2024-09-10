@@ -11,6 +11,7 @@ struct RootView: View {
     var body: some View {
         VStack {
             Diamond()
+                .foregroundStyle(.blue)
             Triangle()
             Sector(startAngle: CGFloat.zero, endAngle: CGFloat.pi)
         }

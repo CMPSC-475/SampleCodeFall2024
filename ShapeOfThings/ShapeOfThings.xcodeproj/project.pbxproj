@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C300AEA52C90B086003353F9 /* TicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300AEA42C90B086003353F9 /* TicTacToe.swift */; };
+		C300AEA72C90B352003353F9 /* OverlappingCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300AEA62C90B352003353F9 /* OverlappingCircles.swift */; };
 		C37589272C8F976800E2A7F4 /* ShapeOfThingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37589262C8F976800E2A7F4 /* ShapeOfThingsApp.swift */; };
 		C37589292C8F976800E2A7F4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37589282C8F976800E2A7F4 /* RootView.swift */; };
 		C375892B2C8F976900E2A7F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C375892A2C8F976900E2A7F4 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C300AEA42C90B086003353F9 /* TicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToe.swift; sourceTree = "<group>"; };
+		C300AEA62C90B352003353F9 /* OverlappingCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlappingCircles.swift; sourceTree = "<group>"; };
 		C37589232C8F976800E2A7F4 /* ShapeOfThings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShapeOfThings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37589262C8F976800E2A7F4 /* ShapeOfThingsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeOfThingsApp.swift; sourceTree = "<group>"; };
 		C37589282C8F976800E2A7F4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 				C37589352C8F97AF00E2A7F4 /* Shapes */,
 				C37589282C8F976800E2A7F4 /* RootView.swift */,
 				C37589442C90847900E2A7F4 /* OffsetAndPositionExampleView.swift */,
+				C300AEA62C90B352003353F9 /* OverlappingCircles.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 				C37589362C8F97BA00E2A7F4 /* Diamond.swift */,
 				C37589382C8F97DE00E2A7F4 /* Sector.swift */,
 				C375893A2C8F97FD00E2A7F4 /* Triangle.swift */,
+				C300AEA42C90B086003353F9 /* TicTacToe.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -171,6 +177,8 @@
 				C375893B2C8F97FD00E2A7F4 /* Triangle.swift in Sources */,
 				C37589272C8F976800E2A7F4 /* ShapeOfThingsApp.swift in Sources */,
 				C37589392C8F97DE00E2A7F4 /* Sector.swift in Sources */,
+				C300AEA52C90B086003353F9 /* TicTacToe.swift in Sources */,
+				C300AEA72C90B352003353F9 /* OverlappingCircles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
