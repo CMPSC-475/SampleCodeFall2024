@@ -14,6 +14,7 @@
 		C37589372C8F97BA00E2A7F4 /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37589362C8F97BA00E2A7F4 /* Diamond.swift */; };
 		C37589392C8F97DE00E2A7F4 /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37589382C8F97DE00E2A7F4 /* Sector.swift */; };
 		C375893B2C8F97FD00E2A7F4 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C375893A2C8F97FD00E2A7F4 /* Triangle.swift */; };
+		C37589452C90847900E2A7F4 /* OffsetAndPositionExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37589442C90847900E2A7F4 /* OffsetAndPositionExampleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		C37589362C8F97BA00E2A7F4 /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
 		C37589382C8F97DE00E2A7F4 /* Sector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sector.swift; sourceTree = "<group>"; };
 		C375893A2C8F97FD00E2A7F4 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		C37589442C90847900E2A7F4 /* OffsetAndPositionExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetAndPositionExampleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				C37589352C8F97AF00E2A7F4 /* Shapes */,
 				C37589282C8F976800E2A7F4 /* RootView.swift */,
+				C37589442C90847900E2A7F4 /* OffsetAndPositionExampleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C37589372C8F97BA00E2A7F4 /* Diamond.swift in Sources */,
+				C37589452C90847900E2A7F4 /* OffsetAndPositionExampleView.swift in Sources */,
 				C37589292C8F976800E2A7F4 /* RootView.swift in Sources */,
 				C375893B2C8F97FD00E2A7F4 /* Triangle.swift in Sources */,
 				C37589272C8F976800E2A7F4 /* ShapeOfThingsApp.swift in Sources */,
