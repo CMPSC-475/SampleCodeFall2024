@@ -13,7 +13,6 @@ struct RootView: View {
     @State var showSheet : Bool = false
     var body: some View {
         VStack {
-            Text(showSheet ? "true" : "false")
             ForEach(manager.components) {component in
                 ColorShapeView(component: component)
             }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C300AEAA2C9330CB003353F9 /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300AEA92C9330CB003353F9 /* Diamond.swift */; };
+		C300AEAC2C9330DE003353F9 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300AEAB2C9330DE003353F9 /* Triangle.swift */; };
+		C300AEAE2C933136003353F9 /* BlendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300AEAD2C933136003353F9 /* BlendView.swift */; };
 		C37588FE2C8F956600E2A7F4 /* ColorComponentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37588FD2C8F956600E2A7F4 /* ColorComponentsApp.swift */; };
 		C37589022C8F956800E2A7F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37589012C8F956800E2A7F4 /* Assets.xcassets */; };
 		C37589052C8F956800E2A7F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37589042C8F956800E2A7F4 /* Preview Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C300AEA92C9330CB003353F9 /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
+		C300AEAB2C9330DE003353F9 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		C300AEAD2C933136003353F9 /* BlendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendView.swift; sourceTree = "<group>"; };
 		C37588FA2C8F956600E2A7F4 /* ColorComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37588FD2C8F956600E2A7F4 /* ColorComponentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponentsApp.swift; sourceTree = "<group>"; };
 		C37589012C8F956800E2A7F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C300AEA82C9330B9003353F9 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				C300AEA92C9330CB003353F9 /* Diamond.swift */,
+				C300AEAB2C9330DE003353F9 /* Triangle.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
 		C37588F12C8F956600E2A7F4 = {
 			isa = PBXGroup;
 			children = (
@@ -82,9 +97,11 @@
 		C375890B2C8F956E00E2A7F4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C300AEA82C9330B9003353F9 /* Shapes */,
 				C37589142C8F967300E2A7F4 /* RootView.swift */,
 				C37589162C8F967E00E2A7F4 /* ControlView.swift */,
 				C37589182C8F96D900E2A7F4 /* ColorShapeView.swift */,
+				C300AEAD2C933136003353F9 /* BlendView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,7 +196,10 @@
 				C37588FE2C8F956600E2A7F4 /* ColorComponentsApp.swift in Sources */,
 				C37589192C8F96D900E2A7F4 /* ColorShapeView.swift in Sources */,
 				C37589152C8F967300E2A7F4 /* RootView.swift in Sources */,
+				C300AEAC2C9330DE003353F9 /* Triangle.swift in Sources */,
+				C300AEAE2C933136003353F9 /* BlendView.swift in Sources */,
 				C375890F2C8F962C00E2A7F4 /* ColorComponent.swift in Sources */,
+				C300AEAA2C9330CB003353F9 /* Diamond.swift in Sources */,
 				C37589132C8F965B00E2A7F4 /* Manager+Color.swift in Sources */,
 				C37589172C8F967E00E2A7F4 /* ControlView.swift in Sources */,
 				C37589112C8F964500E2A7F4 /* ColorManager.swift in Sources */,
