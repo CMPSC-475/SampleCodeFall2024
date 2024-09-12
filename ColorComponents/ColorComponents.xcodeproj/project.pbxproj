@@ -10,6 +10,9 @@
 		C300AEAA2C9330CB003353F9 /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300AEA92C9330CB003353F9 /* Diamond.swift */; };
 		C300AEAC2C9330DE003353F9 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300AEAB2C9330DE003353F9 /* Triangle.swift */; };
 		C300AEAE2C933136003353F9 /* BlendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300AEAD2C933136003353F9 /* BlendView.swift */; };
+		C300AEB02C9350AA003353F9 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300AEAF2C9350AA003353F9 /* Preferences.swift */; };
+		C300AEB22C9351A9003353F9 /* PreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300AEB12C9351A9003353F9 /* PreferenceView.swift */; };
+		C300AEB42C9356E4003353F9 /* ColorSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300AEB32C9356E4003353F9 /* ColorSettingsView.swift */; };
 		C37588FE2C8F956600E2A7F4 /* ColorComponentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37588FD2C8F956600E2A7F4 /* ColorComponentsApp.swift */; };
 		C37589022C8F956800E2A7F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37589012C8F956800E2A7F4 /* Assets.xcassets */; };
 		C37589052C8F956800E2A7F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37589042C8F956800E2A7F4 /* Preview Assets.xcassets */; };
@@ -25,6 +28,9 @@
 		C300AEA92C9330CB003353F9 /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
 		C300AEAB2C9330DE003353F9 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		C300AEAD2C933136003353F9 /* BlendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendView.swift; sourceTree = "<group>"; };
+		C300AEAF2C9350AA003353F9 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		C300AEB12C9351A9003353F9 /* PreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
+		C300AEB32C9356E4003353F9 /* ColorSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSettingsView.swift; sourceTree = "<group>"; };
 		C37588FA2C8F956600E2A7F4 /* ColorComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37588FD2C8F956600E2A7F4 /* ColorComponentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponentsApp.swift; sourceTree = "<group>"; };
 		C37589012C8F956800E2A7F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +108,8 @@
 				C37589162C8F967E00E2A7F4 /* ControlView.swift */,
 				C37589182C8F96D900E2A7F4 /* ColorShapeView.swift */,
 				C300AEAD2C933136003353F9 /* BlendView.swift */,
+				C300AEB12C9351A9003353F9 /* PreferenceView.swift */,
+				C300AEB32C9356E4003353F9 /* ColorSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				C375890E2C8F962C00E2A7F4 /* ColorComponent.swift */,
+				C300AEAF2C9350AA003353F9 /* Preferences.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,9 +206,12 @@
 				C37589192C8F96D900E2A7F4 /* ColorShapeView.swift in Sources */,
 				C37589152C8F967300E2A7F4 /* RootView.swift in Sources */,
 				C300AEAC2C9330DE003353F9 /* Triangle.swift in Sources */,
+				C300AEB42C9356E4003353F9 /* ColorSettingsView.swift in Sources */,
 				C300AEAE2C933136003353F9 /* BlendView.swift in Sources */,
+				C300AEB22C9351A9003353F9 /* PreferenceView.swift in Sources */,
 				C375890F2C8F962C00E2A7F4 /* ColorComponent.swift in Sources */,
 				C300AEAA2C9330CB003353F9 /* Diamond.swift in Sources */,
+				C300AEB02C9350AA003353F9 /* Preferences.swift in Sources */,
 				C37589132C8F965B00E2A7F4 /* Manager+Color.swift in Sources */,
 				C37589172C8F967E00E2A7F4 /* ControlView.swift in Sources */,
 				C37589112C8F964500E2A7F4 /* ColorManager.swift in Sources */,

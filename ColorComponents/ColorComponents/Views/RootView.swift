@@ -7,24 +7,36 @@
 
 import SwiftUI
 
+enum Showing : String, Identifiable, CaseIterable {
+    case preferences, blendedColors
+    var id: RawValue { rawValue}
+}
+
 struct RootView: View {
     @Environment(ColorManager.self) var manager : ColorManager
+    @State private var showing : Showing?
     
-    @State var showSheet : Bool = false
     var body: some View {
+        @Bindable var manager = manager
         VStack {
-            ForEach(manager.components) {component in
-                ColorShapeView(component: component)
+            ForEach($manager.components) {$component in
+                    ColorShapeView(component: $component)
             }
             Spacer()
-            ControlView()
-            Button("show sheet") {
-                showSheet.toggle()
-            }
+            ControlView(showing: $showing)
+            
         }
-        .sheet(isPresented: $showSheet, content: {
-            Text("TODO: Edit the colors")
+        .sheet(item: $showing, content: { item in
+            switch item {
+            case .preferences:
+                PreferenceView(preferences: $manager.preferences)
+            case .blendedColors:
+                BlendView(components: manager.components)
+            }
+                
         })
+        
+        
     }
 }
 

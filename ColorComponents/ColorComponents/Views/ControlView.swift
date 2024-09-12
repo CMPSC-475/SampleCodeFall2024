@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ControlView: View {
     @Environment(ColorManager.self) var manager : ColorManager
+    
+    @Binding var showing : Showing?
     var body: some View {
         HStack {
             Spacer()
@@ -28,11 +30,23 @@ struct ControlView: View {
                 Image(systemName: "arrow.triangle.swap")
             }
             Spacer()
+            Button(action: {
+                showing = .blendedColors
+            }, label: {
+                Image(systemName: "circle.hexagongrid.circle")
+            })
+            Spacer()
+            Button(action: {
+                showing = .preferences
+            }, label: {
+                Image(systemName: "gear")
+            })
+            Spacer()
         }
     }
 }
 
 #Preview {
-    ControlView()
+    ControlView(showing: .constant(.blendedColors))
         .environment(ColorManager())
 }

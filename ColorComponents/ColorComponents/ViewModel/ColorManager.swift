@@ -12,6 +12,9 @@ import SwiftUI
 class ColorManager {
 
     var components : [ColorComponent] = []
+    var preferences : Preferences = Preferences()
+    
+    var selectedComponent : ColorComponent = ColorComponent()
     
     func addColor() {
         components.append(ColorComponent())
