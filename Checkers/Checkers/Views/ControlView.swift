@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ControlView: View {
-    @EnvironmentObject var manager : GameManager
+    @Environment(GameManager.self) var manager
     @Binding var showPreference : Bool
     var body: some View {
         HStack {
@@ -25,5 +25,5 @@ struct ControlView: View {
 }
 #Preview {
     ControlView(showPreference: .constant(false))
-        .environmentObject(GameManager())
+        .environment(GameManager())
 }

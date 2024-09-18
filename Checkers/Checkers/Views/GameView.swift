@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct GameView: View {
-    @EnvironmentObject var manager:GameManager
+    @Environment(GameManager.self) var manager
     @State var showPreference = false
     var body: some View {
+        @Bindable var manager = manager
         VStack {
             ControlView(showPreference: $showPreference)
             Spacer()
@@ -24,5 +25,5 @@ struct GameView: View {
 }
 #Preview {
     GameView()
-        .environmentObject(GameManager())
+        .environment(GameManager())
 }

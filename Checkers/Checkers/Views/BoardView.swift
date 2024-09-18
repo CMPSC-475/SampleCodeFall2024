@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BoardView: View {
-    @EnvironmentObject var manager:GameManager
+    @Environment(GameManager.self) var manager
     var body: some View {
         VStack(spacing:0) {
             ForEach(0..<manager.boardSize, id:\.self) {r in
@@ -27,5 +27,5 @@ struct BoardView: View {
 }
 #Preview {
     BoardView()
-        .environmentObject(GameManager())
+        .environment(GameManager())
 }

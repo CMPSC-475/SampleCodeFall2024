@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import SwiftUI
 
-class GameManager : ObservableObject {
+@Observable
+class GameManager {
     
-    @Published var preferences : Preferences
+    var preferences : Preferences
     
-    @Published var blockSize = 100
-    @Published var pieces : [Piece]
+    var blockSize = 100
+    var pieces : [Piece]
     
     var boardSize : Int {preferences.boardDimension}
     
