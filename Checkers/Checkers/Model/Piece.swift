@@ -10,12 +10,13 @@ import Foundation
 enum Player {
     case home, away
 }
-/*
+
 struct Offset {
     let x : Int
     let y : Int
 }
- */
+
+
 struct Position : Hashable {
     var row : Int = 0
     var col : Int = 0

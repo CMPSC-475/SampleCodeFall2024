@@ -11,7 +11,7 @@ class GameManager : ObservableObject {
     
     @Published var preferences : Preferences
     
-    @Published var blockSize = 80
+    @Published var blockSize = 100
     @Published var pieces : [Piece]
     
     var boardSize : Int {preferences.boardDimension}
