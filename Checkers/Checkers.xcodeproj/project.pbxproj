@@ -18,6 +18,8 @@
 		C33A0F5D2C9B5005004D01EE /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A0F5C2C9B5005004D01EE /* ControlView.swift */; };
 		C33A0F5F2C9B5019004D01EE /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A0F5E2C9B5019004D01EE /* GameView.swift */; };
 		C33A0F612C9B5032004D01EE /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A0F602C9B5032004D01EE /* PreferencesView.swift */; };
+		C3A4949C2C9C8B43008F45FD /* PieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A4949B2C9C8B43008F45FD /* PieceView.swift */; };
+		C3A4949E2C9C8BCA008F45FD /* CheckerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A4949D2C9C8BCA008F45FD /* CheckerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		C33A0F5C2C9B5005004D01EE /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		C33A0F5E2C9B5019004D01EE /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		C33A0F602C9B5032004D01EE /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		C3A4949B2C9C8B43008F45FD /* PieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceView.swift; sourceTree = "<group>"; };
+		C3A4949D2C9C8BCA008F45FD /* CheckerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 				C33A0F5C2C9B5005004D01EE /* ControlView.swift */,
 				C33A0F5E2C9B5019004D01EE /* GameView.swift */,
 				C33A0F602C9B5032004D01EE /* PreferencesView.swift */,
+				C3A4949B2C9C8B43008F45FD /* PieceView.swift */,
+				C3A4949D2C9C8BCA008F45FD /* CheckerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,10 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C33A0F5D2C9B5005004D01EE /* ControlView.swift in Sources */,
+				C3A4949E2C9C8BCA008F45FD /* CheckerView.swift in Sources */,
 				C33A0F5B2C9B4FDD004D01EE /* BoardView.swift in Sources */,
 				C33A0F552C9B4F50004D01EE /* Piece.swift in Sources */,
 				C33A0F5F2C9B5019004D01EE /* GameView.swift in Sources */,
 				C33A0F612C9B5032004D01EE /* PreferencesView.swift in Sources */,
+				C3A4949C2C9C8B43008F45FD /* PieceView.swift in Sources */,
 				C33A0F422C9B4ED4004D01EE /* CheckersApp.swift in Sources */,
 				C33A0F592C9B4F96004D01EE /* GameManager+CG.swift in Sources */,
 				C33A0F532C9B4F20004D01EE /* Preferences.swift in Sources */,

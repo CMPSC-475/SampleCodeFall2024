@@ -14,13 +14,23 @@ enum Player {
 struct Offset {
     let x : Int
     let y : Int
+    
+    static func +(lhs: Position, rhs: Offset) -> Position {
+        Position(row: lhs.row + rhs.y, col: lhs.col + rhs.x)
+    }
 }
 
 
 struct Position : Hashable {
     var row : Int = 0
     var col : Int = 0
+    
+    static func +(lhs: Offset, rhs: Position) -> Position {
+        Position(row: rhs.row + lhs.y, col: rhs.col + lhs.x)
+    }
 }
+
+
 struct Piece : Identifiable {
     var position : Position
     var player : Player
@@ -30,3 +40,18 @@ struct Piece : Identifiable {
     static let standard = Piece(position: Position(), player: .home, number: 1)
     
 }
+
+extension Piece {
+    
+    mutating func moveBy(offset: Offset) {
+        position = position + offset
+    }
+    
+    mutating func to(_ posittion: Position) {
+        self.position = posittion
+    }
+    
+    
+}
+
+
