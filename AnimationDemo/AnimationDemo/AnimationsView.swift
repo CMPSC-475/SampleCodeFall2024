@@ -13,7 +13,7 @@ struct AnimationsView: View {
     @State var opacity : CGFloat = 1.0
     @State var square  = false
     @State var ratio : CGFloat = 1.0
-    @State var depth : CGFloat = 0
+    @State var depth : CGFloat = -50
     @State var angle :CGFloat = 45
     
     var body: some View {

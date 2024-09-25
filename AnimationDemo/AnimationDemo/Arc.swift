@@ -8,13 +8,16 @@
 import Foundation
 import SwiftUI
 
-struct Arc : Shape {
-    var offset : CGFloat
+struct Arc: Shape {
+    var offset: CGFloat
     func path(in rect: CGRect) -> Path {
         var path = Path()
-        let radius = min(rect.maxX/2, rect.maxY/2)
-        path.move(to: CGPoint(x: rect.midX-radius, y: rect.midY))
-        path.addQuadCurve(to: CGPoint(x: rect.midX+radius, y: rect.midY), control: CGPoint(x:rect.midX, y:rect.midY-offset))
+        let startPoint = CGPoint(x: rect.minX, y: rect.midY)
+        let endPoint = CGPoint(x: rect.maxX, y: rect.midY)
+        let controlPoint = CGPoint(x: rect.midX, y: rect.midY - offset)
+        path.move(to: startPoint)
+        path.addQuadCurve(to: endPoint, control: controlPoint)
+        
         return path
     }
 }
