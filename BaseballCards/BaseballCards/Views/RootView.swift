@@ -1,8 +1,8 @@
 //
-//  RootView.swift
+//  ContentView.swift
 //  BaseballCards
 //
-//  Created by Nader Alfares on 9/23/24.
+//  Created by Nader Alfares on 2/6/24.
 //
 
 import SwiftUI
@@ -10,14 +10,19 @@ import SwiftUI
 struct RootView: View {
     @Environment(Manager.self) var manager : Manager
     var body: some View {
+        @Bindable var manager = manager
         VStack {
-            
+            ZStack {
+                ForEach($manager.cards) { $card in
+                    BaseballCardView(card: $card)
+                }
+            }
             HStack {
-                Score(title: "Traded", count: 0)
+                Score(title: "Traded", count: manager.tradedCount)
                 Spacer()
-                Button("Reset") {}
+                Button("Reset") {manager.reset()}
                 Spacer()
-                Score(title: "Kept", count: 0)
+                Score(title: "Kept", count: manager.keptCount)
             }
             .padding()
         }
