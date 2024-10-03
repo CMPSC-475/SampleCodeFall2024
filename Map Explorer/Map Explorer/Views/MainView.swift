@@ -34,30 +34,33 @@ struct MainView: View {
                 }
                 
                 
-                MapCircle(center: .stateCollege, radius: 1000)
-                    .foregroundStyle(.blue.opacity(0.5))
+//                MapCircle(center: .stateCollege, radius: 1000)
+//                    .foregroundStyle(.blue.opacity(0.5))
+                
+                places
+                
+                UserAnnotation()
                 
             }
             .mapStyle(.standard)
             .onAppear {
-                camera = .region(MKCoordinateRegion(center: .stateCollege, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)))
+                camera = .region(manager.region)
             }
-            .safeAreaInset(edge: .bottom) {
-                HStack {
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    SearchButton()
+                }
+                ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         manager.showFavorites.toggle()
                     } label : {
                         Image(systemName: manager.showFavorites ? "star.fill" : "star")
                     }
-                    
-                    NavigationLink(destination: Text("some details view ")) {
-                        Text("click me")
-                    }
                 }
-                
             }
             .sheet(item: $selectedFavorite) { selectedFav in
                 PlaceDetailView(place: selectedFav)
+                    .presentationDetents([.fraction(0.3)])
             }
             
         }
@@ -69,17 +72,31 @@ struct MainView: View {
 extension MainView {
     
     var favoriteAnnotations : some MapContent {
-        
         ForEach(manager.favorites) { favorite in
-            Annotation(favorite.title, coordinate: .init(coord: favorite.coord)) {
+            Annotation(favorite.title, coordinate:
+                    .init(coord: favorite.coord)) {
+                
                 Button {
                     selectedFavorite = favorite
-                } label : {
-                    Image(systemName: "mappin")
+                } label: {
+                    Image(systemName: "star.fill")
                         .font(.system(size: 35))
-                        .foregroundStyle(.red)
+                        .foregroundStyle(.yellow)
+                        .overlay(
+                            Image(systemName: "star")
+                                .font(.system(size: 35))
+                                .foregroundColor(.black)
+                        )
+                        
                 }
             }
+        }
+        
+    }
+    
+    var places : some MapContent {
+        ForEach(manager.places) { place in
+            Marker(place.name, systemImage: place.category.systemName, coordinate: place.coordinate)
         }
     }
 }

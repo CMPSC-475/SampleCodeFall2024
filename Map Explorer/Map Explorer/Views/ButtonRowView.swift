@@ -13,9 +13,6 @@ struct ButtonRow: View {
 
     var body: some View {
         HStack {
-            NavigationLink(destination: Text("TODO: details of the place")) {
-                Image(systemName: "location.fill")
-            }
             ActionButton(title: "Route", icon: "figure.walk", action: {dismiss()})
             ActionButton(title: "Call", icon: "phone", action: {})
             ActionButton(title: "Website", icon: "safari", action: {})
