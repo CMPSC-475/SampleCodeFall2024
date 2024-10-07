@@ -26,34 +26,19 @@ class Manager : NSObject {
     override init() {
         
         super.init()
-        locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
     }
     
+    func toggleFavorites() {
+        showFavorites.toggle()
+    }
+    
+
+    func clearAll() {
+        places.removeAll()
+    }
     
 }
 
-extension Manager : CLLocationManagerDelegate {
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch manager.authorizationStatus {
-        case .notDetermined:
-            manager.requestWhenInUseAuthorization()
-        case .authorizedAlways, .authorizedWhenInUse:
-            manager.startUpdatingLocation()
-        default:
-            manager.stopUpdatingLocation()
-        }
-        
-    }
-    
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
-        
-    }
-    
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
-    }
-}
+
