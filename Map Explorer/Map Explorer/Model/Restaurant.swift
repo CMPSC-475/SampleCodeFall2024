@@ -23,7 +23,7 @@ struct Restaurant : Codable, Identifiable {
             print("Error decoding Restaurants: \(error)")
             res = []
         }
-        return res
+        return res.sorted { r1, r2 in r1.name <= r2.name }
     }()
 }
 
