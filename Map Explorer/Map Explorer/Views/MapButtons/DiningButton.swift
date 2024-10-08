@@ -11,7 +11,14 @@ struct DiningButton: View {
     
     var body: some View {
         Menu {
-            Text("Show list of restaurants")
+            ForEach(Restaurant.restaurants) {
+                restaurant in
+                Button {
+                    manager.geocodeFor(restaurant)
+                } label : {
+                    Text(restaurant.name)
+                }
+            }
         } label: {
             Image(systemName: "fork.knife")
         }

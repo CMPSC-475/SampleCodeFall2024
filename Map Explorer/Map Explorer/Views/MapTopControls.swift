@@ -5,17 +5,18 @@
 //  Created by Nader Alfares on 10/7/24.
 //
 import SwiftUI
+import MapKit
 
 struct MapTopControls: View {
     @Environment(Manager.self) var manager
-
+    @Binding var position : MapCameraPosition
     var body: some View {
         HStack(spacing:20) {
             Button(action: {manager.toggleFavorites()}) {
                 Image(systemName: manager.showFavorites ? "star.fill" : "star")
             }
             SearchButton()
-            ZoomPlaceButton()
+            ZoomPlaceButton(position: $position)
             DiningButton()
             MapInteractionButton()
             GeocodeButton().padding(.trailing)
@@ -27,6 +28,6 @@ struct MapTopControls: View {
 }
 
 #Preview {
-    MapTopControls()
+    MapTopControls(position: .constant(.automatic))
         .environment(Manager())
 }

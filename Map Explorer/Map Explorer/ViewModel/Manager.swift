@@ -23,6 +23,9 @@ class Manager : NSObject {
     var showFavorites: Bool = false
     
     let locationManager: CLLocationManager = .init()
+    
+    var showLocationDescription : String?
+    var showAlert = false
     override init() {
         
         super.init()

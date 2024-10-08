@@ -5,12 +5,21 @@
 //  Created by Nader Alfares on 10/7/24.
 //
 import SwiftUI
+import MapKit
 
 struct ZoomPlaceButton: View {
     @Environment(Manager.self) var manager
+    @Binding var position : MapCameraPosition
     var body: some View {
         Menu {
-            Text("Todo: populate with result places")
+            ForEach(manager.places, id: \.self) { place in
+                Button {
+                    position = .item(place.mapItem)
+                } label: {
+                    Text(place.name)
+                }
+                
+            }
         } label: {
             Image(systemName: "mappin")
         }
@@ -18,7 +27,7 @@ struct ZoomPlaceButton: View {
 }
 
 #Preview {
-    ZoomPlaceButton()
+    ZoomPlaceButton(position: .constant(.automatic))
         .environment(Manager())
 }
 
