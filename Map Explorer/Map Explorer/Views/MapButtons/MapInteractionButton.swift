@@ -5,18 +5,19 @@
 //  Created by Nader Alfares on 10/7/24.
 //
 import SwiftUI
+import MapKit
 
 struct MapInteractionButton: View {
-
+    @Binding var interactionMode : MapInteractionModes
     var body: some View {
         Button(action:{
-            // update interaction mode
+            interactionMode = interactionMode == .all ? .zoom : .all
         }) {
-            Image(systemName: true ? "hand.draw" : "hand.draw.fill")
+            Image(systemName: interactionMode == .all ? "hand.draw" : "hand.draw.fill")
         }
     }
 }
 
 #Preview {
-    MapInteractionButton()
+    MapInteractionButton(interactionMode: .constant(.all))
 }

@@ -11,10 +11,31 @@ struct DowntownMap: View {
     @Environment(Manager.self) var manager
     @State private var camera : MapCameraPosition = .automatic
     @Binding var selectedPlace : Place?
-    
+    @Binding var interactionMode : MapInteractionModes
     
     var body: some View {
-        Map(position: $camera, selection:$selectedPlace) {
+
+        MapReader { proxy in
+        let dragGesture = DragGesture()
+            .onChanged { value in
+                let centerPoint = value.startLocation
+                let edgePoint = value.location
+                
+                // conversion
+                let centerCoordinate = proxy.convert(centerPoint, from: .local)!
+                let edgeCoordinate = proxy.convert(edgePoint, from: .local)!
+                
+                manager.updateCurrentRegion(center: centerCoordinate, edge: edgeCoordinate)
+                
+            
+            }
+            .onEnded { value in
+                manager.addRegion()
+            }
+        
+        Map(position: $camera,
+            interactionModes: interactionMode,
+            selection:$selectedPlace) {
             //favoriteMarkers
             if manager.showFavorites {
                 favoriteAnnotations
@@ -22,7 +43,17 @@ struct DowntownMap: View {
             
             places
             UserAnnotation()
+            regions
+            if let route = manager.routes.first {
+                ForEach(route.steps, id: \.self) { step in
+                    MapPolyline(step.polyline)
+                        .stroke(.blue, lineWidth: 8)
+                }
+            }
+            
         
+        }
+            .gesture(dragGesture)
         }
         .onAppear {
             camera = .region(manager.region)
@@ -38,7 +69,7 @@ struct DowntownMap: View {
         .safeAreaInset(edge: .top) {
             ZStack {
                 Color.white
-                MapTopControls(position: $camera)
+                MapTopControls(position: $camera, interactionMode: $interactionMode)
             }
             .frame(height: 50)
             .padding()
@@ -83,16 +114,33 @@ extension DowntownMap {
     var places : some MapContent {
         ForEach(manager.places) {
             place in
-            Marker(place.name, systemImage: place.category.systemName, coordinate: place.coordinate)
+            Marker(place.name, coordinate: place.coordinate)
                 .tag(place)
         }
         
     }
     
     
+    var regions : some MapContent {
+        Group {
+            ForEach(manager.circularRegions) { region in
+                MapCircle(center: CLLocationCoordinate2D(coord: region.center), radius: region.radius)
+                    .foregroundStyle(Color.black.opacity(0.3))
+            }
+            
+            if let currentRegion = manager.currentCircularRegion {
+                MapCircle(center: CLLocationCoordinate2D(coord: currentRegion.center), radius: currentRegion.radius)
+                    .foregroundStyle(Color.blue.opacity(0.3))
+            }
+        }
+    }
+    
+    
+    
+    
 }
 
 #Preview {
-    DowntownMap(selectedPlace: .constant(Place.standard))
+    DowntownMap(selectedPlace: .constant(Place.standard), interactionMode: .constant(.all))
         .environment(Manager())
 }

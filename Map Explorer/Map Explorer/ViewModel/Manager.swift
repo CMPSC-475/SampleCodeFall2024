@@ -26,6 +26,13 @@ class Manager : NSObject {
     
     var showLocationDescription : String?
     var showAlert = false
+    
+    var routes = [MKRoute]()
+    
+    // Region drawn on map
+    var currentCircularRegion : CircleRegion?
+    var circularRegions : [CircleRegion] = []
+    
     override init() {
         
         super.init()

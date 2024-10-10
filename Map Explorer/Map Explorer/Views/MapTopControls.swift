@@ -10,6 +10,7 @@ import MapKit
 struct MapTopControls: View {
     @Environment(Manager.self) var manager
     @Binding var position : MapCameraPosition
+    @Binding var interactionMode : MapInteractionModes
     var body: some View {
         HStack(spacing:20) {
             Button(action: {manager.toggleFavorites()}) {
@@ -18,7 +19,7 @@ struct MapTopControls: View {
             SearchButton()
             ZoomPlaceButton(position: $position)
             DiningButton()
-            MapInteractionButton()
+            MapInteractionButton(interactionMode: $interactionMode)
             GeocodeButton().padding(.trailing)
             Spacer()
             ClearButton()
@@ -28,6 +29,6 @@ struct MapTopControls: View {
 }
 
 #Preview {
-    MapTopControls(position: .constant(.automatic))
+    MapTopControls(position: .constant(.automatic), interactionMode: .constant(.all))
         .environment(Manager())
 }

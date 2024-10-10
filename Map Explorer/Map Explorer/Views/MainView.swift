@@ -11,10 +11,10 @@ struct MainView: View {
     @Environment(Manager.self) var manager
     
     @State private var selectedPlace : Place?
-
+    @State var interactionMode : MapInteractionModes = .all
     var body: some View {
         @Bindable var manager = manager
-        DowntownMap(selectedPlace: $selectedPlace)
+        DowntownMap(selectedPlace: $selectedPlace, interactionMode: $interactionMode)
             .sheet(item: $selectedPlace) { selectedPlace in
             PlaceDetailView(place: selectedPlace)
                 .presentationDetents([.fraction(0.3)])
