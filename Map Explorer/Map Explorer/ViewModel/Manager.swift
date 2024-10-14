@@ -33,6 +33,8 @@ class Manager : NSObject {
     var currentCircularRegion : CircleRegion?
     var circularRegions : [CircleRegion] = []
     
+    var downtownOverlay : MKPolygon {MKPolygon(coordinates: CLLocationCoordinate2D.downtownCoordinates, count: CLLocationCoordinate2D.downtownCoordinates.count)}
+    
     override init() {
         
         super.init()

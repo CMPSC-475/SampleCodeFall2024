@@ -9,7 +9,7 @@ import MapKit
 
 struct DowntownMap: View {
     @Environment(Manager.self) var manager
-    @State private var camera : MapCameraPosition = .automatic
+    @Binding var camera : MapCameraPosition
     @Binding var selectedPlace : Place?
     @Binding var interactionMode : MapInteractionModes
     
@@ -40,7 +40,7 @@ struct DowntownMap: View {
             if manager.showFavorites {
                 favoriteAnnotations
             }
-            
+            downtown
             places
             UserAnnotation()
             regions
@@ -66,16 +66,6 @@ struct DowntownMap: View {
 //            MapPitchToggle()
 //        }
         .mapStyle(.standard(pointsOfInterest: [.bank]))
-        .safeAreaInset(edge: .top) {
-            ZStack {
-                Color.white
-                MapTopControls(position: $camera, interactionMode: $interactionMode)
-            }
-            .frame(height: 50)
-            .padding()
-            .shadow(radius: 20)
-
-        }
     }
 }
 
@@ -135,12 +125,15 @@ extension DowntownMap {
         }
     }
     
-    
+    var downtown : some MapContent {
+            MapPolygon(manager.downtownOverlay)
+                .foregroundStyle(.blue.opacity(0.4))
+        }
     
     
 }
 
 #Preview {
-    DowntownMap(selectedPlace: .constant(Place.standard), interactionMode: .constant(.all))
+    DowntownMap(camera: .constant(.automatic), selectedPlace: .constant(Place.standard), interactionMode: .constant(.all))
         .environment(Manager())
 }
