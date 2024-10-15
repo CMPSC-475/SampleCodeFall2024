@@ -35,6 +35,8 @@ class Manager : NSObject {
     
     var downtownOverlay : MKPolygon {MKPolygon(coordinates: CLLocationCoordinate2D.downtownCoordinates, count: CLLocationCoordinate2D.downtownCoordinates.count)}
     
+    var selectedPlace : Place?
+    
     override init() {
         
         super.init()

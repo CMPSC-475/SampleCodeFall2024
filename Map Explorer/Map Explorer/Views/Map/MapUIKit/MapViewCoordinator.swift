@@ -8,8 +8,9 @@ import Foundation
 import MapKit
 
 class MapViewCoordinator : NSObject, MKMapViewDelegate {
-    
-    override init() {
+    var manager : Manager
+    init(manager: Manager) {
+        self.manager = manager
         super.init()
     }
     
@@ -17,7 +18,7 @@ class MapViewCoordinator : NSObject, MKMapViewDelegate {
     // called when Map needs to display an annotation on the map
    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         //TODO: complete this code
-            return MKAnnotationView()
+            return nil
     }
     
     // Callout Accessory triggers this function
@@ -31,6 +32,11 @@ class MapViewCoordinator : NSObject, MKMapViewDelegate {
 
             MKCircleRenderer()
 
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
+        let place = annotation as! Place
+        manager.selectedPlace = place
     }
     
 }

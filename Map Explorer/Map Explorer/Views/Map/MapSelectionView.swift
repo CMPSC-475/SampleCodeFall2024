@@ -14,20 +14,21 @@ struct MapSelectionView: View {
     @Binding var camera : MapCameraPosition
     @Binding var mapKind : MapKind
     @Binding var modes : MapInteractionModes
-    @Binding var selectedPlace : Place?
     
     var body : some View {
+        @Bindable var manager = manager
         switch mapKind {
         case .SwiftUI:
-            DowntownMap(camera: $camera, selectedPlace: $selectedPlace, interactionMode: $modes)
+            DowntownMap(camera: $camera, selectedPlace: $manager.selectedPlace, interactionMode: $modes)
 
         case .UIKit:
-            Text("MapUIKit")
+            MapViewUIKit()
+                .ignoresSafeArea()
         }
     }
 }
 
 #Preview {
-    MapSelectionView(camera: .constant(.automatic), mapKind: .constant(.SwiftUI), modes: .constant(.all), selectedPlace: .constant(Place.standard))
+    MapSelectionView(camera: .constant(.automatic), mapKind: .constant(.UIKit), modes: .constant(.all))
         .environment(Manager())
 }
