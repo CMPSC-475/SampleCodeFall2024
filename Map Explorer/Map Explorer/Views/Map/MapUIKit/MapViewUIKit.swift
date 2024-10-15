@@ -10,7 +10,7 @@ import MapKit
 
 /*
 struct MapViewUIKit : UIViewRepresentable {
-    @EnvironmentObject var manager : Manager
+    @Environment(Manager.self) var manager
  
     
     func makeUIView(context: Context) -> ??? {
