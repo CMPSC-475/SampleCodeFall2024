@@ -8,6 +8,7 @@ import MapKit
 
 extension Manager {
     func searchFor(_ category: Category) {
+        self.places.removeAll()
         let request = MKLocalSearch.Request()
         request.region = self.region
         request.naturalLanguageQuery = category.rawValue

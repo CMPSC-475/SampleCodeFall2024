@@ -28,6 +28,7 @@ class Manager : NSObject {
     var showAlert = false
     
     var routes = [MKRoute]()
+    var polylines : [MKPolyline] {routes.map { $0.polyline }}
     
     // Region drawn on map
     var currentCircularRegion : CircleRegion?
