@@ -22,6 +22,10 @@ class StatesManager {
         theStates = _theStates
     }
     
+    func save() {
+        persistence.save(theStates)
+    }
+    
     
 }
 

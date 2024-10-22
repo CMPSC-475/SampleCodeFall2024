@@ -10,33 +10,9 @@
 		C3D7192B2CC44F9700A21140 /* US States.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "US States.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C3D7194E2CC4506000A21140 /* Exceptions for "US States" folder in "US States" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Model/StatesData.json,
-			);
-			target = C3D7192A2CC44F9700A21140 /* US States */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		C3D7194F2CC4506000A21140 /* Exceptions for "US States" folder in "Compile Sources" phase from "US States" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = C3D719272CC44F9700A21140 /* Sources */;
-			membershipExceptions = (
-				Model/StatesData.json,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C3D7192D2CC44F9700A21140 /* US States */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C3D7194E2CC4506000A21140 /* Exceptions for "US States" folder in "US States" target */,
-				C3D7194F2CC4506000A21140 /* Exceptions for "US States" folder in "Compile Sources" phase from "US States" target */,
-			);
 			path = "US States";
 			sourceTree = "<group>";
 		};
