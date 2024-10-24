@@ -10,7 +10,8 @@ import SwiftUI
 struct StateDetailView: View {
     @Binding var theState : USState
     var body: some View {
-
+        ZStack {
+            Color("psu")
             ScrollView {
                 VStack {
                     Group {
@@ -20,12 +21,13 @@ struct StateDetailView: View {
                         }
                         Text(theState.info)
                         DetailImages(imageNames: theState.images)
-
+                        
                     }.padding()
                 }
+            }
+            .navigationTitle(Text(theState.name))
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle(Text(theState.name))
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

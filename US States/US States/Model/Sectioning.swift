@@ -17,4 +17,8 @@ struct SectionInfo : Identifiable, Hashable {
     var id : String { title }
 }
 
+extension Sectioning {
+    
+}
+
 

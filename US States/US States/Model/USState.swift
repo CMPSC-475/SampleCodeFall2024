@@ -51,5 +51,9 @@ extension USState {
 }
 extension USState  {
     var firstLetter : String { name.first?.uppercased() ?? "" }
+    var decadeAdmitted : String  {String(admissionYear - admissionYear%10)}
+    var centuryFounded: Int { admissionYear/100 }
+    var empty : String {""}  // for no sectioning
+    
     
 }

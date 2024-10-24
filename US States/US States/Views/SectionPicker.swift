@@ -10,7 +10,7 @@ import SwiftUI
 struct SectionPicker: View {
 
     @Environment(StatesManager.self) var manager
-    @Binding var sectioning: Sectioning
+    @AppStorage("Sectioning") var sectioning : Sectioning = .none
     
     var body: some View {
         @Bindable var manager = manager
@@ -24,6 +24,6 @@ struct SectionPicker: View {
 }
 
 #Preview {
-    SectionPicker(sectioning: .constant(.byName))
+    SectionPicker()
         .environment(StatesManager())
 }

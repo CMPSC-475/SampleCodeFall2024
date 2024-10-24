@@ -9,11 +9,12 @@ import SwiftUI
 
 struct StatesList: View {
     @Environment(StatesManager.self) var manager
+    @AppStorage("Sectioning") var sectioning : Sectioning = .none
     var body: some View {
         @Bindable var manager = manager
         NavigationStack {
             List {
-                ForEach(manager.sectionInfo()) { sectionInfo in
+                ForEach(manager.sectionInfo(for: sectioning)) { sectionInfo in
                     Section {
                         ForEach($manager.theStates) { state in
                             if sectionInfo.identifiers.contains(state.id) {
@@ -30,7 +31,7 @@ struct StatesList: View {
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    SectionPicker(sectioning: $manager.sectioning)
+                    SectionPicker()
                 }
             }
         }
