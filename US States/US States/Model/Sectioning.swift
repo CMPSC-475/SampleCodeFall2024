@@ -5,8 +5,10 @@
 //  Created by Nader Alfares on 10/22/24.
 //
 
-enum Sectioning {
-    case none, byName, byDecade
+enum Sectioning: String, CaseIterable {
+    case none = "None"
+    case byName = "By Name"
+    case byDecade = "By Decade"
 }
 
 struct SectionInfo : Identifiable, Hashable {

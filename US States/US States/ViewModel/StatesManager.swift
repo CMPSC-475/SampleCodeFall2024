@@ -13,6 +13,7 @@ typealias USStates = [USState]
 class StatesManager {
     var theStates : USStates
     private let persistence : Persistence<USStates>
+    var sectioning : Sectioning = .none
     
     init() {
         let filename = "StatesData"
@@ -26,6 +27,9 @@ class StatesManager {
         persistence.save(theStates)
     }
     
+    func formatted(year:Int) -> String {
+        String(format: "%04d",year)
+    }
     
 }
 
