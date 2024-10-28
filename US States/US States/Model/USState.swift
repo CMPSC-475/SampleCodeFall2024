@@ -54,6 +54,4 @@ extension USState  {
     var decadeAdmitted : String  {String(admissionYear - admissionYear%10)}
     var centuryFounded: Int { admissionYear/100 }
     var empty : String {""}  // for no sectioning
-    
-    
 }

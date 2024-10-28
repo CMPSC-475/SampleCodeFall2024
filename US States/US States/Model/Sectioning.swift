@@ -18,7 +18,13 @@ struct SectionInfo : Identifiable, Hashable {
 }
 
 extension Sectioning {
-    
+    var keyPath : KeyPath<USState,String> {
+        switch self {
+        case .none: \USState.empty
+        case .byName: \USState.firstLetter
+        case .byDecade: \USState.decadeAdmitted
+        }
+    }
 }
 
 
