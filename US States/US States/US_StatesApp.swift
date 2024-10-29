@@ -15,8 +15,8 @@ struct US_StatesApp: App {
         WindowGroup {
             HomeView()
                 .environment(manager)
-                .onChange(of: scenePhase) { phase in
-                    switch phase {
+                .onChange(of: scenePhase) { oldValue, newValue in
+                    switch newValue {
                     case .active, .background:
                         manager.save()
                     case .inactive:
