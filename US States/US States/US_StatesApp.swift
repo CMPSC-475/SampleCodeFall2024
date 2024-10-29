@@ -13,7 +13,7 @@ struct US_StatesApp: App {
     @Environment(\.scenePhase) var scenePhase
     var body: some Scene {
         WindowGroup {
-            StatesList()
+            HomeView()
                 .environment(manager)
                 .onChange(of: scenePhase) { phase in
                     switch phase {

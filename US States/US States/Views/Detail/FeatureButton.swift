@@ -9,10 +9,10 @@ import SwiftUI
 
 struct FeatureButton: View {
     @Binding var value : Bool
+    @Environment(\.dismiss) var dismiss
     let iconName : String
-    
     var body: some View {
-        Button(action:{value.toggle()}) {
+        return Button(action:{value.toggle(); dismiss()}) {
             Image(systemName: value ? iconName+".fill" : iconName)
         }
     }

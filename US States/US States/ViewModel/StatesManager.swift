@@ -14,6 +14,10 @@ class StatesManager {
     var theStates : USStates
     private let persistence : Persistence<USStates>
     
+    var centuries : [Int] {
+        return Array(Set(theStates.map({$0.centuryFounded}))).sorted()
+    }
+    
     init() {
         let filename = "StatesData"
         persistence = Persistence<USStates>(filename:filename)
@@ -28,6 +32,14 @@ class StatesManager {
     
     func formatted(year:Int) -> String {
         String(format: "%04d",year)
+    }
+    
+    func centuryTitle(for century:Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .ordinal
+        let ordinal = formatter.string(from: NSNumber(value: century + 1))!
+        let title = "Founded in the \(ordinal) century"
+        return title
     }
     
 }
