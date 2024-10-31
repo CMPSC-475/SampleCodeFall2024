@@ -21,15 +21,15 @@ struct RootView: View {
                     Label("List", systemImage: "list.star")
                 }
             
-//            TripleSplitView()
-//                .tabItem {
-//                    Label("SplitView", systemImage: "rectangle.split.3x1.fill")
-//                }
+            TripleSplitView()
+                .tabItem {
+                    Label("SplitView", systemImage: "rectangle.split.3x1.fill")
+                }
 //            
-//            GridView()
-//                .tabItem {
-//                    Label("Grid", systemImage: "square.grid.2x2.fill")
-//                }
+            StateGridView()
+                .tabItem {
+                    Label("Grid", systemImage: "square.grid.2x2.fill")
+                }
             
             
         }

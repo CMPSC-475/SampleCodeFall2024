@@ -8,8 +8,19 @@ import SwiftUI
 
 //TODO: 
 struct EasySplitView : View {
+    @Environment(StatesManager.self) var manager
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationSplitView {
+            StatesList()
+        } detail: {
+            Text("Select a State")
+        }
     }
+}
+
+#Preview {
+    EasySplitView()
+        .environment(StatesManager())
 }
 
