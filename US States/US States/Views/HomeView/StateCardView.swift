@@ -2,8 +2,9 @@
 //  StateCardView.swift
 //  US States
 //
-//  Created by Nader Alfares on 10/29/24.
+//  Created by Nader Alfares on 10/31/24.
 //
+
 import SwiftUI
 
 struct StateCardView: View {
@@ -12,7 +13,7 @@ struct StateCardView: View {
         Image(theState.name)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(height: 60)
+            .frame(height: Flag.height)
     }
 }
 

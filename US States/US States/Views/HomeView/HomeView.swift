@@ -24,6 +24,11 @@ struct HomeView : View {
         NavigationStack {
             List {
                 
+                if homeStateId != nil {
+                    let index = manager.indexFor(id: homeStateId!)!
+                    HomeStateView(theState: manager.theStates[index])
+                }
+                
                 if anyVisited {
                     CategoryView(category: Category(title: "Visited States", property: {$0.visited}))
                 }

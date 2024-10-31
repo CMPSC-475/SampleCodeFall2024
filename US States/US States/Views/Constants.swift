@@ -15,3 +15,7 @@ struct Storage {
     static let sectioning = "sectioning"
     static let homeStateId = "homeStateId"
 }
+
+struct Flag {
+    static let height : CGFloat = 150
+}

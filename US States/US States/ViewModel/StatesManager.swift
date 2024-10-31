@@ -34,6 +34,10 @@ class StatesManager {
         String(format: "%04d",year)
     }
     
+    func indexFor(id: String) -> Int? {
+        return theStates.firstIndex(where: {$0.id == id})
+    }
+    
     func centuryTitle(for century:Int) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .ordinal
