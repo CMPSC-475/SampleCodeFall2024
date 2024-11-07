@@ -22,11 +22,9 @@ const mimeTypes = {
 const server = http.createServer((req, res) => {
   // Determine the requested file path
   let filePath = path.join(__dirname, '../public', req.url === '/' ? 'index.html' : req.url);
-
   // Get the file extension
   const extname = String(path.extname(filePath)).toLowerCase();
   const contentType = mimeTypes[extname] || 'application/octet-stream';
-
   // Read and serve the file
   fs.readFile(filePath, (error, content) => {
     if (error) {
