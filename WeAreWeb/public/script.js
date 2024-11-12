@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var textToChange = document.getElementById("cheerText")
 
     changeTextButton.addEventListener('click', function() {
+        console.log(cheerCount)
         if(cheerCount < 6) {
             if(cheerCount%2 == 0){
                 textToChange.textContent = CheersModel.firstCheerRoundOne

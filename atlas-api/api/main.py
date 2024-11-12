@@ -2,7 +2,12 @@ from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 from typing import List
 from fastapi.middleware.cors import CORSMiddleware
+import pickledb
+import sys, os
 
+
+print("Python executable being used:", sys.executable)
+print("Environment variables:", os.environ)
 
 app = FastAPI()
 
@@ -28,8 +33,13 @@ class BookingRequest(BaseModel):
     passenger_name: str
     passenger_email: str
 
+# Initialize PickleDB
+flights_db = pickledb.load('flights.db', auto_dump=True)
+booked_flights_db = pickledb.load('booked_flights.db', auto_dump=True)
 
-flights_db = [
+# Populate the database with initial flights data if empty
+if not flights_db.get("flights"):
+    initial_flights = [
   {
     "id": 1,
     "flight_id": "ABC123",
@@ -85,43 +95,38 @@ flights_db = [
     "price": 100.00
   }
 ]
-
-booked_flights_db = []
-
+    flights_db.set("flights", initial_flights)
 
 @app.get("/flights")
 def get_flights():
-    return flights_db
-
+    return flights_db.get("flights")
 
 @app.post("/flights")
 def add_flight(flight: Flight):
-    newFlight = flight.copy().dict()
-    # get largest id and increment by 1
-    max_id = max([flight["id"] for flight in flights_db])
-    newFlight["id"] = max_id + 1
-    flights_db.append(newFlight)
-    return {"message" : "flight added"}
-
+    flights = flights_db.get("flights")
+    max_id = max([f["id"] for f in flights]) if flights else 0
+    new_flight = flight.dict()
+    new_flight["id"] = max_id + 1
+    flights.append(new_flight)
+    flights_db.set("flights", flights)
+    return {"message": "Flight added"}
 
 @app.post("/book-flight/", response_model=Flight)
 def book_flight(booking_request: BookingRequest):
     flight_id = booking_request.flight_id
-    
+    flights = flights_db.get("flights")
+
     # Check if the flight exists
-    flight = next((flight for flight in flights_db if flight["id"] == flight_id), None)
-    if flight is None:
+    flight = next((f for f in flights if f["id"] == flight_id), None)
+    if not flight:
         raise HTTPException(status_code=404, detail="Flight not found")
-    else:
-        booked_flights_db.append(booking_request.dict())
 
-    # Assuming some booking logic here, e.g., sending confirmation email
-    # In real-world scenario, you'd perform the actual booking process
-    
-    # For demonstration, let's just return the booked flight
+    booked_flights = booked_flights_db.get("booked_flights") or []
+    booked_flights.append(booking_request.dict())
+    booked_flights_db.set("booked_flights", booked_flights)
+
     return flight
-
 
 @app.get("/booked-flights", response_model=List[BookingRequest])
 def get_booked_flights():
-    return booked_flights_db
+    return booked_flights_db.get("booked_flights") or []
