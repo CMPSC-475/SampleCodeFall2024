@@ -5,10 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 import pickledb
 import sys, os
 
-
-print("Python executable being used:", sys.executable)
-print("Environment variables:", os.environ)
-
 app = FastAPI()
 
 # Allow requests from all origins
